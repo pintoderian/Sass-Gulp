@@ -109,3 +109,27 @@ table {
       }
     }
   }
+/* Galería de imágenes */
+@mixin gridImagenes($cantidad, $margin) {
+    width: ((100% - (($cantidad - 1) * $margin))/$cantidad);
+    &:nth-child(n) {
+      margin-right: $margin;
+      margin-bottom: $margin;
+    }
+    &:nth-child(#{$cantidad}n + 1) {
+        margin-right:0;
+        margin-bottom: 0;
+    }
+}
+.galeria{
+    margin: 25px auto!important;
+    width:80%;
+    .imagen{
+        float: left;
+        @include gridImagenes(5, 1%);
+        img{
+            display: block;
+            max-width: 100%;
+        }
+    }
+}

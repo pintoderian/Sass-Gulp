@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Pacifico");
 /* Variables */
 /* mixins */
@@ -34,3 +35,14 @@ table > thead > tr:nth-child(odd), table > tbody > tr:nth-child(odd) { backgroun
 table > thead > tr:hover, table > tbody > tr:hover { background-color: #e60000; }
 
 table > thead > tr th, table > thead > tr td, table > tbody > tr th, table > tbody > tr td { padding: 10px; border-bottom: 1px dotted #fff; }
+
+/* Galería de imágenes */
+.galeria { margin: 25px auto !important; width: 80%; }
+
+.galeria .imagen { float: left; width: 19.2%; }
+
+.galeria .imagen:nth-child(n) { margin-right: 1%; margin-bottom: 1%; }
+
+.galeria .imagen:nth-child(5n + 1) { margin-right: 0; margin-bottom: 0; }
+
+.galeria .imagen img { display: block; max-width: 100%; }
