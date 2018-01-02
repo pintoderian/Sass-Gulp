@@ -69,3 +69,43 @@ body{
         background: lighten(red, 20);
     }
 }
+
+table {
+    margin: 25px auto!important;
+    width:80%;
+    text-align: left;
+    font-size: 1rem;
+    border-collapse: collapse;
+    text-align: center;
+    > caption {
+      text-align: left;
+      font-family:$fuente-titulo;
+      font-size: 1.8rem;
+      padding:5px;
+      color:$white;
+      margin-bottom: 20px;
+    }
+    thead tr th  {
+      background-color: darken($blue, 20);
+      color:$white;
+      font-size: 1.3rem;
+    }
+    > thead,
+    > tbody {
+      > tr {
+        color:$white;
+        background-color: darken($blue,10);
+        &:nth-child(odd) {
+          background-color: $blue;
+        }
+        &:hover {
+          background-color: darken(red,5);
+        }
+        th,
+        td {
+          padding:10px;
+          border-bottom: 1px dotted $white;
+        }
+      }
+    }
+  }

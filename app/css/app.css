@@ -20,3 +20,17 @@ body h1:hover { color: yellowgreen; }
 .buttons .btn, .buttons .btn-negro { text-transform: uppercase; color: #fff; background: #0f4b83; border: 0px; padding: 20px; }
 
 .buttons .btn-negro { background: #ff6666; }
+
+table { margin: 25px auto !important; width: 80%; text-align: left; font-size: 1rem; border-collapse: collapse; text-align: center; }
+
+table > caption { text-align: left; font-family: "Pacifico", cursive; font-size: 1.8rem; padding: 5px; color: #fff; margin-bottom: 20px; }
+
+table thead tr th { background-color: #0f4b83; color: #fff; font-size: 1.3rem; }
+
+table > thead > tr, table > tbody > tr { color: #fff; background-color: #1465b1; }
+
+table > thead > tr:nth-child(odd), table > tbody > tr:nth-child(odd) { background-color: #197fdf; }
+
+table > thead > tr:hover, table > tbody > tr:hover { background-color: #e60000; }
+
+table > thead > tr th, table > thead > tr td, table > tbody > tr th, table > tbody > tr td { padding: 10px; border-bottom: 1px dotted #fff; }
