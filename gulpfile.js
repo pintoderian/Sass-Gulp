@@ -8,7 +8,8 @@ gulp.task('sass', function() {
   gulp.src('scss/app.scss')
     .pipe(autoprefixer())
     .pipe(sass({
-      includePaths: ['scss']
+      includePaths: ['scss'],
+      outputStyle: 'compact'
     }))
     .pipe(gulp.dest('app/css'));
 });

@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+/* Variables */
+/* mixins */
+body { background-color: #222; margin: 0px; padding: 0px; }
+
+body h1 { text-align: center; color: #fff; font-family: "Pacifico", cursive; padding-bottom: 20px; border-bottom: 1px solid #444242; }
+
+body h1:hover { color: yellowgreen; }
+
+@media only screen and (min-width: 768px) { body h1 { text-align: left; color: red; } }
+
+@media only screen and (min-width: 1024px) { body h1 { text-align: right; color: blue; } }
+
+.contenido { color: #fff; }
+
+.contenido p { padding: 10px; font-family: Arial, Helvetica, sans-serif; text-transform: uppercase; }

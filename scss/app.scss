@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+/* Variables */
+$blue: rgb(25, 127, 223);
+$black: #222;
+$white: #fff;
+
+$fondo: $black;
+$fuente-titulo: 'Pacifico', cursive;
+
+$tablet: 768px;
+$desktop: 1024px;
+
+/* mixins */
+@mixin tablet{
+    @media only screen and (min-width: #{$tablet}){
+        @content;        
+    }
+}
+@mixin desktop{
+    @media only screen and (min-width: #{$desktop}){
+        @content;        
+    }
+}
+@mixin myhover{
+    &:hover{
+        color: yellowgreen;
+    }
+}
+body{
+    background-color: $fondo;
+    margin: 0px;
+    padding: 0px;
+    h1{
+        text-align: center;
+        color: $white;
+        font-family: $fuente-titulo;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #444242;
+        @include myhover;
+        @include tablet{
+            text-align: left;
+            color: red;
+        }
+        @include desktop{
+            text-align: right;
+            color: blue;
+        }
+    }
+}
+.contenido{
+    color: $white;
+    p{
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+    }
+}
