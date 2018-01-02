@@ -14,3 +14,9 @@ body h1:hover { color: yellowgreen; }
 .contenido { color: #fff; }
 
 .contenido p { padding: 10px; font-family: Arial, Helvetica, sans-serif; text-transform: uppercase; }
+
+.buttons { text-align: center; }
+
+.buttons .btn, .buttons .btn-negro { text-transform: uppercase; color: #fff; background: #0f4b83; border: 0px; padding: 20px; }
+
+.buttons .btn-negro { background: #ff6666; }

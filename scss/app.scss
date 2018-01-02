@@ -55,3 +55,17 @@ body{
         text-transform: uppercase;
     }
 }
+.buttons{
+    text-align: center;
+    .btn{
+        text-transform: uppercase;
+        color: $white;
+        background: darken($blue, 20);
+        border: 0px;
+        padding: 20px;
+    }
+    .btn-negro{
+        @extend .btn;
+        background: lighten(red, 20);
+    }
+}
