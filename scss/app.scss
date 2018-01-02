@@ -90,10 +90,43 @@ table {
     width:80%;
     .imagen{
         float: left;
-        @include gridImagenes(5, 1%);
+        @include gridImagenes(2, 1%);
         img{
             display: block;
             max-width: 100%;
+        }
+        @include tablet{
+            @include gridImagenes(5, 1%);
+        }
+        @include desktop{
+            @include gridImagenes(5, 1%);
+        }
+    }
+}
+/* grid */
+.container{
+    margin: 25px auto !important;
+    width: 80%;
+    p{
+        color: $white;
+    }
+}
+[class*='col-']{
+    float:left;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+.row {
+    @include clearfix;
+    @include tablet {
+        margin:0 -1em;
+    }
+}
+@include tablet {
+    @for $i from 1 through $numero-columnas {
+        [class~='col-#{$i}']{
+            width: 100% / $numero-columnas * $i;
         }
     }
 }
