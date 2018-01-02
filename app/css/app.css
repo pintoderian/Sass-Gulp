@@ -4,13 +4,13 @@
 /* mixins */
 body { background-color: #222; margin: 0px; padding: 0px; }
 
-body h1 { text-align: center; color: #fff; font-family: "Pacifico", cursive; padding-bottom: 20px; border-bottom: 1px solid #444242; }
+body h1, body h2 { text-align: center; color: #fff; font-family: "Pacifico", cursive; padding-bottom: 20px; border-bottom: 1px solid #444242; }
 
-body h1:hover { color: yellowgreen; }
+body h1:hover, body h2:hover { color: yellowgreen; }
 
-@media only screen and (min-width: 768px) { body h1 { text-align: left; color: red; } }
+@media only screen and (min-width: 768px) { body h1, body h2 { text-align: left; color: red; } }
 
-@media only screen and (min-width: 1024px) { body h1 { text-align: right; color: blue; } }
+@media only screen and (min-width: 1024px) { body h1, body h2 { text-align: right; color: blue; } }
 
 .contenido { color: #fff; }
 

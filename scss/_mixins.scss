@@ -1,0 +1,27 @@
+/* mixins */
+@mixin tablet{
+    @media only screen and (min-width: #{$tablet}){
+        @content;        
+    }
+}
+@mixin desktop{
+    @media only screen and (min-width: #{$desktop}){
+        @content;        
+    }
+}
+@mixin myhover{
+    &:hover{
+        color: yellowgreen;
+    }
+}
+@mixin gridImagenes($cantidad, $margin) {
+    width: ((100% - (($cantidad - 1) * $margin))/$cantidad);
+    &:nth-child(n) {
+      margin-right: $margin;
+      margin-bottom: $margin;
+    }
+    &:nth-child(#{$cantidad}n + 1) {
+        margin-right:0;
+        margin-bottom: 0;
+    }
+}
