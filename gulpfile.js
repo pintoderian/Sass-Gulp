@@ -7,6 +7,7 @@ var browserify = require('gulp-browserify');
 var merge = require('merge-stream');
 var uglify = require('gulp-uglify'); //para minificar archivos
 var htmlmin = require('gulp-htmlmin'); //para minificar html
+var plumber = require('gulp-plumber');
 /* concatenar varios archivos js */
 var concat = require('gulp-concat');
 var fuentesJs = [
@@ -27,6 +28,7 @@ gulp.task('js', function(){
 
 gulp.task('sass', function() {
   gulp.src('scss/app.scss')
+    .pipe(plumber()) // para evitar que deje de ejecutar workflow y solo muestre el error de sass
     .pipe(autoprefixer())
     .pipe(sass({
       includePaths: ['scss'],
