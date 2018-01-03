@@ -5,6 +5,8 @@ var reload = browserSync.reload;
 var autoprefixer = require('gulp-autoprefixer');
 var browserify = require('gulp-browserify');
 var merge = require('merge-stream');
+var uglify = require('gulp-uglify'); //para minificar archivos
+var htmlmin = require('gulp-htmlmin'); //para minificar html
 /* concatenar varios archivos js */
 var concat = require('gulp-concat');
 var fuentesJs = [
@@ -16,6 +18,7 @@ gulp.task('js', function(){
   gulp.src(fuentesJs)
     .pipe(concat('scripts.js'))
     .pipe(browserify())
+    .pipe(uglify()) //minificando
     .pipe(gulp.dest('app/js'))
     .pipe(reload({stream:true}))
 });
@@ -27,7 +30,7 @@ gulp.task('sass', function() {
     .pipe(autoprefixer())
     .pipe(sass({
       includePaths: ['scss'],
-      outputStyle: 'compact'
+      outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(gulp.dest('app/css'));
 });
@@ -49,6 +52,14 @@ gulp.task('sass', function() {
       .pipe(gulp.dest('app/css/'));
 });
 */
+
+/* tarea para minificar html */
+gulp.task('minify', function(){
+  return gulp.src('html/*.html')
+    .pipe(htmlmin({collapseWhitespace:true}))
+    .pipe(gulp.dest('app'))
+});
+
 gulp.task('serve', ['sass'], function() {
   browserSync.init(["app/css/*.css", "app/js/*.js", "app/*.html"], {
     server: {
@@ -58,7 +69,7 @@ gulp.task('serve', ['sass'], function() {
 
 });
 
-gulp.task('watch', ['sass', 'serve', 'js'], function() {
+gulp.task('watch', ['sass', 'serve', 'js', 'minify'], function() {
   gulp.watch(["scss/*.scss"], ['sass']);
   gulp.watch(["js/*.js"], ['js']);
 });
