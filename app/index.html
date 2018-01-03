@@ -75,6 +75,22 @@
 </div>
 <div class="container">
     <div class="row">
+        <div class="col-12">
+            <div id="galeria" class="galeria">
+                <h2>Galería Mustache</h2>
+                <div id="galeria-londres" class="row"></div>
+                <script id="template" type="x-tmpl-mustache">
+                    {{#galeria}}
+                        <div class="col-3 image">
+                            <img src="{{imagen}}"/>
+                            <div class="caption">
+                                {{destino}}
+                            </div>
+                        </div>
+                    {{/galeria}}
+                </script>
+            </div>
+        </div>
         <div class="col-6">
             <div class="alert alert-primary">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta mollitia placeat necessitatibus iure nisi, consectetur ea facere magnam quaerat adipisci, repellat fuga dolorum natus atque incidunt hic odio saepe enim.

@@ -134,3 +134,17 @@ table {
         }
     }
 }
+#galeria-londres{
+    color:$white;
+    .image{
+        .caption{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+}

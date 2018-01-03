@@ -136,3 +136,9 @@ table > thead > tr th, table > thead > tr td, table > tbody > tr th, table > tbo
   [class~='col-10'] { width: 83.33333%; }
   [class~='col-11'] { width: 91.66667%; }
   [class~='col-12'] { width: 100%; } }
+
+#galeria-londres { color: #fff; }
+
+#galeria-londres .image .caption { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
+
+#galeria-londres .image img { max-width: 100%; }
