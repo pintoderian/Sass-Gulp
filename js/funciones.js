@@ -1,3 +1,3 @@
 function msg(){
-    alert('concatenando...');
+    console.log('concatenando...');
 }

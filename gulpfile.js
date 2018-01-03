@@ -4,6 +4,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var autoprefixer = require('gulp-autoprefixer');
 var browserify = require('gulp-browserify');
+var merge = require('merge-stream');
 /* concatenar varios archivos js */
 var concat = require('gulp-concat');
 var fuentesJs = [
@@ -31,6 +32,23 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('app/css'));
 });
 
+/* Usando merge para combinar sass y css en un solo archivo */
+/*gulp.task('sass', function() {
+  var archivoSass, archivoCss;
+
+  archivoSass = gulp.src('scss/app.scss')
+    .pipe(autoprefixer())
+    .pipe(sass({
+      includePaths: ['scss'],
+    }));
+
+    archivoCss = gulp.src('css/core.css');
+
+    return merge(archivoSass, archivoCss)
+      .pipe(concat('app.css'))
+      .pipe(gulp.dest('app/css/'));
+});
+*/
 gulp.task('serve', ['sass'], function() {
   browserSync.init(["app/css/*.css", "app/js/*.js", "app/*.html"], {
     server: {
